@@ -1,10 +1,10 @@
 # Kotlin DSL demo
 
-A simple Kotlin DSL demonstrating how such DSL's could be constructed, and two Spring Boot implementations, one in Kotlin, one in Java,
+A simple Kotlin DSL demonstrating how such DSLs could be constructed. Furthermore two Spring Boot implementations, one in Kotlin, one in Java,
 using the DSL.
 
-The Spring Boot applications are configured to persist the file `src/main/resources/dsl/demodata.orderdsl.kts` to the database as start. The
-applications also monitor the `/tmp` directory on the hard drive for files ending in orderdsl.kts, and persist the found files.
+The Spring Boot applications are configured to persist the file `src/main/resources/dsl/demodata.orderdsl.kts` to the database at start up. The
+applications also monitor the `/tmp` directory on the local file system for files ending in `orderdsl.kts`, and persist the files if found.
 
 Since the file suffix `orderdsl.kts` is registered in the configuration, these files can be edited directly in IntelliJ IDEA with full
 editor support.
@@ -20,7 +20,7 @@ editor support.
   
 - Start docker compose in the root directory to get a postgres database running on port 15432: `docker compose up -d`.
 
-- Choose to go down into either the Kotlin (`kotlin-boot`) or the Java version (`java-boot`) of Spring Boot, and start it `../gradlew
+- Choose to go down into either the Kotlin (`kotlin-boot`) or the Java version (`java-boot`) of Spring Boot, and start it with `../gradlew
   bootRun`. The application should start, and the contents of `src/main/resources/dsl/demodata.orderdsl.kts` should be persisted to the
   database.
   

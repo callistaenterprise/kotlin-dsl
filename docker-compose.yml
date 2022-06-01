@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    volumes:
+      - ${ORDERDSL_DATA_PATH:-./orderdsl_data}:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:15432:5432"
+    environment:
+      POSTGRES_USER: orderdsl
+      POSTGRES_PASSWORD: secret
+      POSTGRES_INITDB_ARGS: --data-checksums

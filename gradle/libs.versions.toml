@@ -1,0 +1,44 @@
+[versions]
+flyway = "8.4.4"
+jooq = "3.16.6"
+junit = "5.8.2"
+kotest-core = "5.1.0"
+kotlin = "1.6.21"
+postgres = "42.2.23"
+spring-boot = "2.6.7"
+testcontainers = "1.17.1"
+
+[libraries]
+flyway = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+jooq-core = { module = "org.jooq:jooq", version.ref = "jooq" }
+jooq-kotlin = { module = "org.jooq:jooq-kotlin", version.ref = "jooq" }
+junit-full = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+kotest-core = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest-core" }
+kotlin-compiler-embeddable = { module = "org.jetbrains.kotlin:kotlin-compiler-embeddable", version.ref = "kotlin" }
+kotlin-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-script-jsr223 = { module = "org.jetbrains.kotlin:kotlin-scripting-jsr223", version.ref = "kotlin" }
+kotlin-script-jvm-host = { module = "org.jetbrains.kotlin:kotlin-scripting-jvm-host", version.ref = "kotlin" }
+kotlin-script-util = { module = "org.jetbrains.kotlin:kotlin-script-util", version.ref = "kotlin" }
+postgres = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+spring-boot-jooq = { module = "org.springframework.boot:spring-boot-starter-jooq", version.ref = "spring-boot" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+testcontainers-junit = { module = "org.testcontainers:junit-jupiter", version.ref = "testcontainers" }
+testcontainers-postgres = { module = "org.testcontainers:postgresql", version.ref = "testcontainers" }
+
+[bundles]
+jooq = ["jooq-core", "jooq-kotlin"]
+kotlin-extra = ["kotlin-reflect", "kotlin-jdk8"]
+kotlin-script-runtime = ["kotlin-script-util", "kotlin-script-jvm-host", "kotlin-compiler-embeddable"]
+spring-boot = ["spring-boot-jooq", "spring-boot-web"]
+testcontainers = ["testcontainers-postgres", "testcontainers-junit"]
+
+[plugins]
+flyway = { id = "org.flywaydb.flyway", version.ref = "flyway" }
+jooq = { id = "nu.studer.jooq", version = "7.1" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version = "10.2.1" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }

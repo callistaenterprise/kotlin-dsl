@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:15432/orderdsl
+    username: orderdsl
+    password: secret
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    locations: classpath:db/migration/
